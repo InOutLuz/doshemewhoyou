@@ -1,28 +1,30 @@
-import { Outlet, Link } from 'react-router-dom';
-import { Fragment } from 'react';
-import {ReactComponent as CrwnLogo} from '../../../assets/crown.svg'
-import './navigation.styles.scss'
+import { Outlet, Link } from "react-router-dom";
+import { Fragment } from "react";
+import { ReactComponent as CrwnLogo } from "../../../assets/crown.svg";
+import "./navigation.styles.scss";
 const Navigation = () => {
+  return (
+    <Fragment>
+      <div className="navigation">
+        <Link className="logo-container" to="/">
+          <div>
+            <CrwnLogo className="logo" />
+          </div>
+        </Link>
 
-    return(
-  <Fragment>
-  <div className='navigation'>
+        <div className="nav-links-container">
+          <Link className="nav-link" to="/shop">
+            SHOP
+          </Link>
 
-  <Link className='logo-container' to='/'>
-  <div><CrwnLogo className='logo' /></div>
-  </Link>
+          <Link className="nav-link" to="/signIn">
+            SIGN IN
+          </Link>
+        </div>
+      </div>
+      <Outlet />
+    </Fragment>
+  );
+};
 
-  <div className='nav-links-container'>
-  <Link className='nav-link' to='/shop'>
-  SHOP
-  </Link>
-  </div>
-  </div>
-  <Outlet />
-  </Fragment>
-  
-    );
-  
-  };
-
-  export default Navigation;
+export default Navigation;
